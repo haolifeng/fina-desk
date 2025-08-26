@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="menu">
+        <ul>
+          <li>菜单项 1</li>
+          <li>菜单项 2</li>
+          <li>菜单项 3</li>
+        </ul>
+      </div>
+      <div className="content">
+        <h1>内容区域</h1>
+        <p>这里是页面的主要内容。</p>
+      </div>
     </div>
   );
 }
