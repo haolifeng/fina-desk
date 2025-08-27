@@ -10,6 +10,9 @@ import {
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
 import OrderTable from "./component/OrderTable";
+import TradeTable from "./component/TradeTable";
+import {  Route, Link, HashRouter as Router , Routes} from "react-router";
+
 
 const { Header, Sider, Content } = Layout;
 
@@ -22,27 +25,28 @@ function App() {
   } = theme.useToken()
   return (
     <div className="app-container">
+        <Router>
       <div className="menu">
        <Menu
-      
+
           mode="inline"
           defaultSelectedKeys={['1']}
-          
+
           items={[
             {
               key: '1',
               icon: <UserOutlined />,
-              label: 'nav 1',
+                label: (<Link to="/order">nav 1</Link>),
             },
             {
               key: '2',
               icon: <VideoCameraOutlined />,
-              label: 'nav 2',
+              label: (<Link to="/trade">nav 2</Link>),
             },
             {
               key: '3',
               icon: <UploadOutlined />,
-              label: 'nav 3',
+              label: (<Link to="/trade">nav 3</Link>),
             },
           ]}
         />
@@ -69,9 +73,15 @@ function App() {
             borderRadius: borderRadiusLG,
           }}
         >
-          <OrderTable/>
+               <Routes>
+                   <Route path="/order" element={<OrderTable/>}/>
+                   <Route path={"/trade"} element={<TradeTable/>}/>
+               </Routes>
+
+
         </Content>
       </div>
+        </Router>
     </div>
   );
 }
