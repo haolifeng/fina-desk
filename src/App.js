@@ -9,7 +9,11 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
+import OrderTable from "./component/OrderTable";
+
 const { Header, Sider, Content } = Layout;
+
+
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -65,7 +69,7 @@ function App() {
             borderRadius: borderRadiusLG,
           }}
         >
-          Content
+          <OrderTable/>
         </Content>
       </div>
     </div>
