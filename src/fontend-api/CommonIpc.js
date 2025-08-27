@@ -1,3 +1,5 @@
+
+console.log('*****',window);
 const ipcRenderer = window.electron.ipcRenderer;//
 const remote = window.electron.remote;//
 

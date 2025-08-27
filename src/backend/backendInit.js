@@ -21,7 +21,7 @@ function  registerAllMsgHandler () {
 
 
 function init(win) {
-    serverapi.start((msgtype, data,callback) => {
+    serverApi.start((msgtype, data,callback) => {
         let contents = win.webContents;
         contents.send(msgtype, data);
         if(callback){

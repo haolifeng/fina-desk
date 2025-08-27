@@ -1,15 +1,23 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+
+const url = require('url')
 const isDev = require('electron-is-dev');
 
 const backendInit = require('./src/backend/backendInit');
 
+
+
 function createWindow () {
+    console.log('preload: ', path.join(__dirname, './public/render.js'))
     const mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            nodeIntegration: true, // integration Nodejs
+            nodeIntegrationInWorker: true,
+            webSecurity: false,
+            preload: path.join(__dirname, './preload.js')
         }
     })
 
