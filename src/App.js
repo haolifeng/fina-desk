@@ -13,7 +13,7 @@ import OrderTable from "./component/OrderTable";
 import TradeTable from "./component/TradeTable";
 import {  Route, Link, HashRouter as Router , Routes} from "react-router";
 import fontendApi from "./fontend-api/api";
-fontendApi
+
 
 const { Header, Sider, Content } = Layout;
 
