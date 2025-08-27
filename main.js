@@ -14,7 +14,20 @@ function createWindow () {
     })
 
     backendInit(mainWindow);
+    let pathdd = url.format({
+        pathname: path.join(__dirname, './build/index.html'),
+        protocol: 'file:',
+        slashes: true
+    })
+    mainWindow.loadURL(pathdd);
+    mainWindow.loadURL(pathdd)
 
+    mainWindow.webContents.openDevTools()
+
+    mainWindow.on('closed', function () {
+        mainWindow = null
+    })
+/*
     if (isDev) {
         // 開發階段直接與 React 連線
         mainWindow.loadURL('http://localhost:3000/');
@@ -24,6 +37,8 @@ function createWindow () {
         // 產品階段直接讀取 React 打包好的
         mainWindow.loadFile('./build/index.html');
     }
+
+ */
 }
 
 app.whenReady().then(() => {
