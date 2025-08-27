@@ -2,6 +2,8 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const isDev = require('electron-is-dev');
 
+const backendInit = require('./src/backend/backendInit');
+
 function createWindow () {
     const mainWindow = new BrowserWindow({
         width: 800,
@@ -10,6 +12,8 @@ function createWindow () {
             preload: path.join(__dirname, 'preload.js')
         }
     })
+
+    backendInit(mainWindow);
 
     if (isDev) {
         // 開發階段直接與 React 連線
