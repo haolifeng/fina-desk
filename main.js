@@ -17,7 +17,7 @@ function createWindow () {
             nodeIntegration: true, // integration Nodejs
             nodeIntegrationInWorker: true,
             webSecurity: false,
-            preload: path.join(__dirname, './preload.js')
+            preload: path.join(__dirname, 'preload.js')
         }
     })
 
