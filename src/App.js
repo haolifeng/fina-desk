@@ -12,7 +12,8 @@ import { Button, Layout, Menu, theme } from 'antd';
 import OrderTable from "./component/OrderTable";
 import TradeTable from "./component/TradeTable";
 import {  Route, Link, HashRouter as Router , Routes} from "react-router";
-
+import fontendApi from "./fontend-api/api";
+fontendApi
 
 const { Header, Sider, Content } = Layout;
 
@@ -56,7 +57,12 @@ function App() {
           <Button
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
+            onClick={() => {
+                fontendApi.pingPoin({name:'haolifeng', message:'hello, world'}, (error, result)=> {
+                    console.log('error: ', error);
+                    console.log('result: ', result);
+                })
+            }}
             style={{
               fontSize: '16px',
               width: 64,

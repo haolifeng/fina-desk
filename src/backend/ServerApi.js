@@ -11,7 +11,8 @@ class ServerApi {
     }
     pingPong(option, callback) {
 
-        this.sendmessagefun()
+        console.log('pingPong -- option: ', option);
+        callback("no error", "I get you");
 
     }
 }

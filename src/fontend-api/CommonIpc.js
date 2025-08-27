@@ -1,6 +1,6 @@
 const ipcRenderer = window.electron.ipcRenderer;//
 const remote = window.electron.remote;//
-const url = require('url');
+
 
 class CommonIpc {
     sendMsg(msgtype, data, callback) {

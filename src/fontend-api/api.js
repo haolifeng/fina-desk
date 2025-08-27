@@ -5,6 +5,9 @@ class FontEndApi {
         this.ipc = new CommonIpc();
 
     }
+    pingPoin(option, callback) {
+        this.ipc.sendMsg(msgtype.PING_PONG, option, callback);
+    }
     registerMessageHandle(msgtype,callback){
         this.ipc.registerMsgHandle(msgtype,callback);
     }
