@@ -9,7 +9,9 @@ class ServerApi {
         callback();
 
     }
-    pingPong() {
+    pingPong(option, callback) {
+
+        this.sendmessagefun()
 
     }
 }
