@@ -12,6 +12,6 @@ contextBridge.exposeInMainWorld('versions', {
 let electronAPI = {
   setTitle: (title) => ipcRenderer.send('set-title', title),
   pingPong:(data)=> ipcRenderer.send('ping-pong', data),
-  onPingPong:(callback)=>ipcRenderer.on('ping-pong-reply',(_event, error, result)=>callback( error,result))
+  onPingPong:(callback)=>ipcRenderer.on('ping-pong-reply',(_event, value)=>callback( value))
 }
 contextBridge.exposeInMainWorld('electronAPI', electronAPI);

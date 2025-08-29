@@ -9,7 +9,7 @@ function registerMsgHandle(msgtype,handle,self){
     ipcMain.on(msgtype, (event, arg) => {
 
         handle.call(self,arg, (err, result) => {
-            self.webContents.send(msgtype+'-reply', err, result);
+            self.webContents.send(msgtype+'-reply', {error:err, result:result});
         })
     });
 }

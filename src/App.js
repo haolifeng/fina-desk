@@ -58,9 +58,9 @@ function App() {
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             onClick={() => {
-                fontendApi.pingPoin({name:'haolifeng', message:'hello, world'}, (error, result)=> {
-                    console.log('error: ', error);
-                    console.log('result: ', result);
+                fontendApi.pingPoin({name:'haolifeng', message:'hello, world'}, (value)=> {
+                    console.log('value: ', value);
+
                 })
             }}
             style={{
