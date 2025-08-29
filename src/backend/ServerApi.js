@@ -4,8 +4,8 @@ class ServerApi {
     constructor(){
 
     }
-    start(sendmessagefun, callback) {
-        this.sendmessagefun  = sendmessagefun;
+    start(webContents, callback) {
+        this.webContents  = webContents;
         callback();
 
     }

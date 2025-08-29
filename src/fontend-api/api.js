@@ -1,16 +1,12 @@
-import CommonIpc from "./CommonIpc";
-import msgtype from "../common/msgtype";
-class FontEndApi {
-    constructor() {
-        this.ipc = new CommonIpc();
 
+
+class FontEndApi {
+    constructor() {}
+     pingPoin(params, callback) {
+         window.electronAPI.pingPong(params);
+        window.electronAPI.onPingPong(callback);
     }
-    pingPoin(option, callback) {
-        this.ipc.sendMsg(msgtype.PING_PONG, option, callback);
-    }
-    registerMessageHandle(msgtype,callback){
-        this.ipc.registerMsgHandle(msgtype,callback);
-    }
+
 }
 
 let fontendApi = new FontEndApi();

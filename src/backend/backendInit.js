@@ -9,7 +9,7 @@ function registerMsgHandle(msgtype,handle,self){
     ipcMain.on(msgtype, (event, arg) => {
 
         handle.call(self,arg, (err, result) => {
-            event.sender.send(msgtype+'-reply', { error: err, result: result });
+            self.webContents.send(msgtype+'-reply', err, result);
         })
     });
 }
@@ -21,12 +21,7 @@ function  registerAllMsgHandler () {
 
 
 function init(win) {
-    serverApi.start((msgtype, data,callback) => {
-        let contents = win.webContents;
-        contents.send(msgtype, data);
-        if(callback){
-            ipcMain.on(msgtype+'-reply-to-server',callback);
-        }},registerAllMsgHandler);
+    serverApi.start(win,registerAllMsgHandler);
 };
 
 module.exports = init;

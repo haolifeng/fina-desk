@@ -8,7 +8,10 @@ contextBridge.exposeInMainWorld('versions', {
   electron: () => process.versions.electron
   // we can also expose variables, not just functions
 });
-contextBridge.exposeInMainWorld('electronAPI', {
+
+let electronAPI = {
   setTitle: (title) => ipcRenderer.send('set-title', title),
-  pingPong:(data)=> ipcRenderer.send('ping-pong', data)
-})
+  pingPong:(data)=> ipcRenderer.send('ping-pong', data),
+  onPingPong:(callback)=>ipcRenderer.on('ping-pong-reply',(_event, error, result)=>callback( error,result))
+}
+contextBridge.exposeInMainWorld('electronAPI', electronAPI);
