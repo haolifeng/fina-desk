@@ -74,7 +74,12 @@
     "wstart": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "start": "node scripts/build.js && electron ."
+    "start": "node scripts/build.js && electron .",
+    "createtrade": "node scripts/1_create_table_trade.js",
+    "createorder": "node scripts/2_create_table_myorder.js",
+    "droptrade": "node scripts/3_drop_table_trade.js",
+    "droporder": "node scripts/4_drop_table_myorder.js",
+    "find_one_from_trade": "node scripts/5_find_one_from_trade.js"
   },
   "eslintConfig": {
     "extends": [

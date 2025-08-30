@@ -9,7 +9,7 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
-import OrderTable from "./component/OrderTable";
+import OrderTable from "./component/OrderTable2";
 import TradeTable from "./component/TradeTable";
 import {  Route, Link, HashRouter as Router , Routes} from "react-router";
 import fontendApi from "./fontend-api/api";

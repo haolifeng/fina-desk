@@ -1,7 +1,8 @@
-
+const DB = require('./db/DB');
 
 class ServerApi {
     constructor(){
+        this.db = new DB();
 
     }
     start(webContents, callback) {
